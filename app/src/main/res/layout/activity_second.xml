@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_white"
+    tools:context=".SecondActivity">
+
+
+    <LinearLayout
+        android:id="@+id/main_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_blue"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="150dp"
+            android:paddingEnd="150dp"
+            android:src="@drawable/ic_volcano"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Policies"
+        android:textSize="24sp"
+        android:textColor="@color/dark_blue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/main_linear_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/enter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_logo">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Second.Button"
+            android:text="Policy" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Second.Button"
+            android:text="Product Category" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Second.Button"
+            android:text="Origin Country" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Second.Button"
+            android:text="Brand" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/enter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Current Policies"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/dark_blue"
+        android:layout_margin="50dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_second"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="Crush Activities"
+        android:paddingVertical="12dp"
+        app:cornerRadius="70dp"
+        android:backgroundTint="@color/pink"
+        android:layout_marginHorizontal="96dp"
+        android:textColor="@color/black"
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

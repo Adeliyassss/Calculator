@@ -2,8 +2,11 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,12 +15,15 @@ public class MainActivity extends AppCompatActivity {
     private Integer first, second;
     private boolean isOperationClick;
     private String operation;
+    private Button resulty;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view);
+        resulty=findViewById(R.id.btn_result);
     }
 
     public void onNumberClick(View view) {
@@ -140,21 +146,26 @@ public class MainActivity extends AppCompatActivity {
                    case "+":
                        result=first+second;
                    textView.setText(result.toString());
+                   resulty.setVisibility(View.VISIBLE);
+
                    break;
 
                    case "-":
                        result=first-second;
                        textView.setText(result.toString());
+                       resulty.setVisibility(View.VISIBLE);
                        break;
 
                    case "*":
                        result=first*second;
                        textView.setText(result.toString());
+                       resulty.setVisibility(View.VISIBLE);
                        break;
 
                    case "/":
                        result=first/second;
                        textView.setText(result.toString());
+                       resulty.setVisibility(View.VISIBLE);
                        break;
 
                }
@@ -163,5 +174,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+    }
+
+
+
+    public void onButtonClick(View view) {
+        resulty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("KEY",textView.getText());
+                textView.setText("0");
+                resulty.setVisibility(View.GONE);
+                startActivity(intent);
+            }
+        });
     }
 }

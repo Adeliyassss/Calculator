@@ -213,5 +213,19 @@
 
     </LinearLayout>
 
+    <Button
+        android:onClick="onButtonClick"
+        android:visibility="invisible"
+        android:id="@+id/btn_result"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:text="btn_click"
+        android:backgroundTint="@color/pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="100dp"
+        android:layout_height="50dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
